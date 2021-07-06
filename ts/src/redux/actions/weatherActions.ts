@@ -17,7 +17,7 @@ export const getWeather = (
         payload: res,
       });
     } else {
-      alert("Такого города нет, сори");
+      alert("Такого города нет, сори за алерт");
     }
   };
 };
