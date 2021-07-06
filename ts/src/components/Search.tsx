@@ -1,6 +1,6 @@
 import React, { FormEvent, useState } from "react";
 import { useDispatch } from "react-redux";
-import { setAlert } from "../redux/actions/alertActions";
+import { addCity } from "../redux/actions/citysActions";
 import { getWeather } from "../redux/actions/weatherActions";
 
 interface WeatherProps {
@@ -17,12 +17,8 @@ export const Search: React.FC<WeatherProps> = ({ title }) => {
 
   const submitHandler = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    if (city.trim() === "") {
-      dispatch(setAlert("City is required"));
-    }
-
     dispatch(getWeather(city));
+    dispatch(addCity(city));
     setCity("");
   };
 

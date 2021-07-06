@@ -1,10 +1,10 @@
 import { combineReducers } from "redux";
-import alertReducer from "./alertReducer";
 import weatherReducer from "./weatherReducer";
+import citysReducer from "./citysReducer";
 
 const rootReducer = combineReducers({
   weather: weatherReducer,
-  alert: alertReducer,
+  citys: citysReducer,
 });
 
 export type RootState = ReturnType<typeof rootReducer>;

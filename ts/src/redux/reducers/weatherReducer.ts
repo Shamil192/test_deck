@@ -1,5 +1,5 @@
 /* eslint-disable import/no-anonymous-default-export */
-import { WeatherState, WeatherAction, GET_WEATHER, SET_ERROR } from "../types";
+import { WeatherState, WeatherAction, GET_WEATHER } from "../types";
 
 const initialState: WeatherState = {
   data: null,
@@ -12,11 +12,6 @@ export default (state = initialState, action: WeatherAction): WeatherState => {
       return {
         data: action.payload,
         error: "",
-      };
-    case SET_ERROR:
-      return {
-        ...state,
-        error: action.payload,
       };
     default:
       return state;

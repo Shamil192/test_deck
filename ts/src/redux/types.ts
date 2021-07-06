@@ -1,6 +1,5 @@
 export const GET_WEATHER = "GET_WEATHER";
-export const SET_ERROR = "SET_ERROR";
-export const SET_ALERT = "SET_ALERT";
+export const ADD_CITY = "ADD_CITY";
 
 export interface Weather {
   id: number;
@@ -47,11 +46,6 @@ export interface WeatherData {
   cod: number;
 }
 
-export interface WeatherError {
-  cod: string;
-  message: string;
-}
-
 export interface WeatherState {
   data: WeatherData | null;
   error: string;
@@ -62,18 +56,11 @@ interface GetWeatherAC {
   payload: WeatherData;
 }
 
-interface SetErrorAC {
-  type: typeof SET_ERROR;
-  payload: string;
+export interface AddCityAC {
+  type: typeof ADD_CITY;
+  payload: any;
 }
 
-export type WeatherAction = GetWeatherAC | SetErrorAC;
+export type CitysAction = AddCityAC;
 
-export interface AlertAction {
-  type: typeof SET_ALERT;
-  payload: string;
-}
-
-export interface AlertState {
-  message: string;
-}
+export type WeatherAction = GetWeatherAC;
